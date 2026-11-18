@@ -257,15 +257,16 @@ h2 {
 .qr-card .text-link { font-size: .85rem; padding: 4px 0; }
 
 .visit {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 22px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .7fr);
+  gap: clamp(28px, 6vw, 88px);
   padding-block: clamp(45px, 7vw, 92px);
 }
 .visit h2 { font-size: clamp(2.6rem, 6vw, 5.1rem); }
-address { margin-top: 13px; font-style: normal; color: var(--muted); }
+.visit address, .visit p { margin-top: 13px; color: var(--muted); }
+.visit address { font-style: normal; }
+.visit .button { margin-top: 16px; }
+.visit .contact-note { margin-top: 8px; font-size: .85rem; }
 footer { background: var(--ink); color: var(--paper); }
 .footer-inner { min-height: 100px; }
 footer p { color: #deddd1; font-size: .78rem; }
@@ -289,13 +290,12 @@ footer p a { text-underline-offset: 3px; }
 }
 
 @media (max-width: 520px) {
-  .top-inner { min-height: 69px; gap: 12px; }
+  .top-inner { min-height: 69px; gap: 8px; }
   .top .brand-mark { width: 37px; height: 37px; font-size: 2rem; }
   .top .brand { gap: 7px; }
   .top .brand-name { font-size: .78rem; }
-  nav { gap: 13px; }
+  nav { gap: clamp(7px, 2.5vw, 13px); }
   nav a { font-size: .81rem; }
-  nav a[href="#kde"] { display: none; }
   .nav-pay { padding: 6px 8px; }
   .nav-pay span { margin-left: 1px; }
   .hero-inner { min-height: 477px; }
@@ -318,6 +318,7 @@ footer p a { text-underline-offset: 3px; }
   .event-time { font-size: .73rem; }
   .payment-inner { grid-template-columns: 1fr; }
   .qr-card { width: min(100%, 235px); }
+  .visit { grid-template-columns: minmax(0, 1fr); }
   .footer-inner { flex-wrap: wrap; gap: 13px; padding-block: 20px; }
 }
 
