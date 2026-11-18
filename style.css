@@ -144,17 +144,29 @@ h2 {
 .text-link:hover { text-decoration-thickness: 2px; }
 .event-list { margin: 0; padding: 0; list-style: none; }
 .event {
+  --poster-width: clamp(68px, 7.5vw, 96px);
   display: grid;
-  grid-template-columns: clamp(94px, 13vw, 162px) minmax(0, 1fr) auto;
+  grid-template-areas: "date poster title actions";
+  grid-template-columns: clamp(92px, 11vw, 135px) var(--poster-width) minmax(0, 1fr) auto;
   align-items: center;
-  gap: clamp(15px, 3.4vw, 48px);
-  min-height: 124px;
-  padding: 19px 14px;
+  gap: clamp(14px, 2.5vw, 36px);
+  padding: 13px 14px;
   border-top: 1px solid var(--rule);
 }
 .event:first-child { border-top-color: var(--ink); }
 .event:last-child { border-bottom: 1px solid var(--rule); }
-.event time { display: grid; align-content: center; gap: 4px; }
+.event time { grid-area: date; display: grid; align-content: center; gap: 4px; }
+.event-poster {
+  grid-area: poster;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  background: #e4e0d6;
+  border: 1px solid #1c1c1a29;
+}
+.event-title { grid-area: title; }
 .event-date { font: 800 clamp(2rem, 4vw, 3.4rem)/.95 var(--display); letter-spacing: -.015em; }
 .event-time { color: var(--muted); font-size: .82rem; font-weight: 650; }
 .event-type {
@@ -167,7 +179,7 @@ h2 {
 }
 .event h3 { margin-top: 3px; font: 800 clamp(1.8rem, 4.1vw, 3.35rem)/.99 var(--display); overflow-wrap: anywhere; }
 .event-note { color: var(--muted); margin-top: 5px; font-size: .9rem; line-height: 1.35; }
-.event-actions { display: grid; justify-items: end; gap: 6px; }
+.event-actions { grid-area: actions; display: grid; justify-items: end; gap: 6px; }
 .event-price {
   font-size: .85rem;
   font-weight: 720;
@@ -187,9 +199,10 @@ h2 {
 .event.next .event-type, .event.next .event-time, .event.next .film-link { color: #343822; }
 .history { margin-top: clamp(44px, 7vw, 90px); color: #64635d; }
 .history h2 { font-size: clamp(2.15rem, 4vw, 3.6rem); margin-bottom: 18px; }
-.history .event { background: #eeece4; min-height: 93px; }
+.history .event { background: #eeece4; }
 .history .event h3 { font-size: clamp(1.6rem, 3vw, 2.5rem); }
 .history .event-type, .history .event-time, .history .event-note { color: inherit; }
+.history .event-poster { filter: grayscale(1); opacity: .7; }
 .history .event:first-child { border-top-color: var(--rule); }
 .empty { padding: 22px 14px; border-block: 1px solid var(--rule); }
 
@@ -268,7 +281,7 @@ footer p a { text-underline-offset: 3px; }
   .hero-copy { padding-top: 145px; padding-bottom: 38px; }
   .hero h1 { font-size: clamp(5.7rem, 17vw, 8.6rem); }
   .hero p { margin: 22px 0 18px; }
-  .event { grid-template-columns: 76px minmax(0, 1fr) auto; min-height: 106px; padding-inline: 8px; gap: 13px; }
+  .event { grid-template-columns: 76px var(--poster-width) minmax(0, 1fr) auto; padding-inline: 8px; gap: 13px; }
   .event.next { padding-inline: 8px; }
   .event-type { font-size: .68rem; }
   .payment-inner { gap: 24px; }
@@ -289,12 +302,20 @@ footer p a { text-underline-offset: 3px; }
   .hero h1 { font-size: clamp(4.5rem, 18.3vw, 7rem); }
   .section-head { align-items: end; }
   .section-head p, .section-head a { font-size: .85rem; }
-  .event { grid-template-columns: 62px minmax(0, 1fr); align-items: start; gap: 6px 12px; padding-block: 15px; min-height: auto; }
-  .event time { grid-row: span 2; }
-  .event-actions { grid-column: 2; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: start; gap: 5px 16px; }
+  .event {
+    --poster-width: clamp(55px, 17vw, 76px);
+    grid-template-areas: "poster date" "poster title" "poster actions";
+    grid-template-columns: var(--poster-width) minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    align-items: start;
+    gap: 6px 12px;
+    padding-block: 13px;
+  }
+  .event time { display: flex; align-items: baseline; gap: 8px; }
+  .event-date { font-size: 1.62rem; }
+  .event-actions { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: start; gap: 5px 16px; }
   .event-price a { min-height: 32px; }
   .event-time { font-size: .73rem; }
-  .history .event { min-height: auto; }
   .payment-inner { grid-template-columns: 1fr; }
   .qr-card { width: min(100%, 235px); }
   .footer-inner { flex-wrap: wrap; gap: 13px; padding-block: 20px; }

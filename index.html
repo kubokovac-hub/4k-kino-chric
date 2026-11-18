@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/4k.svg" type="image/svg+xml">
   <link rel="stylesheet" href="font.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
   <script defer src="site.js"></script>
 </head>
 <body id="nahoru">
@@ -45,12 +45,22 @@
     </section>
 
     <section class="wrap program" id="program" aria-labelledby="program-title">
+      <!-- Zdroje plakátů pro kina:
+        CinemArt: https://www.cinemart.cz/filmy/prisaham-ze-za-to-nemuzu/
+        Aerofilms: https://www.aerofilms.cz/filmy-a-prenosy/holubi/
+        https://www.aerofilms.cz/filmy-a-prenosy/milovnik-ne-bojovnik/
+        https://www.aerofilms.cz/filmy-a-prenosy/obcan-havel/
+        https://www.aerofilms.cz/filmy-a-prenosy/cizinec/
+        Bioscop: https://www.bioscop.cz/filmy/o-mysce-a-medvedovi
+        Promítej i ty: https://www.promitejity.cz/detail-filmu/141-zkompostuj-me
+        Ostatní náhledy tvoří původní ilustrace pro web kina.
+      -->
       <div class="section-head">
         <div>
           <h2 id="program-title">Program</h2>
           <p>Listopad a začátek prosince 2026</p>
         </div>
-        <a class="text-link" id="history-link" href="#historie" hidden>Minulé akce <span aria-hidden="true">↓</span></a>
+        <a class="text-link" id="history-link" href="#historie">Minulé akce <span aria-hidden="true">↓</span></a>
       </div>
       <p class="empty" id="no-events" hidden>Další termíny přidáme, jakmile bude program hotový.</p>
       <ul class="event-list" id="schedule">
@@ -59,6 +69,7 @@
             <span class="event-date" aria-hidden="true">05.11.</span>
             <span class="event-time" aria-hidden="true">Čt · 20:30</span>
           </time>
+          <img class="event-poster" src="assets/plakaty/holubi.webp" width="240" height="360" alt="" loading="lazy" decoding="async">
           <div class="event-title">
             <p class="event-type">Filmový čtvrtek</p>
             <h3>Kdyby se holubi proměnili ve zlato</h3>
@@ -73,6 +84,7 @@
             <span class="event-date" aria-hidden="true">12.11.</span>
             <span class="event-time" aria-hidden="true">Čt · 20:30</span>
           </time>
+          <img class="event-poster" src="assets/plakaty/milovnik.webp" width="240" height="360" alt="" loading="lazy" decoding="async">
           <div class="event-title">
             <p class="event-type">Filmový čtvrtek</p>
             <h3>Milovník, ne bojovník</h3>
@@ -87,6 +99,7 @@
             <span class="event-date" aria-hidden="true">15.11.</span>
             <span class="event-time" aria-hidden="true">Ne · 16:00</span>
           </time>
+          <img class="event-poster" src="assets/plakaty/myska.webp" width="240" height="360" alt="" loading="lazy" decoding="async">
           <div class="event-title">
             <p class="event-type">Dětská neděle s popcornem</p>
             <h3>O myšce a medvědovi</h3>
@@ -101,6 +114,7 @@
             <span class="event-date" aria-hidden="true">17.11.</span>
             <span class="event-time" aria-hidden="true">Út · 20:30</span>
           </time>
+          <img class="event-poster" src="assets/plakaty/obcan-havel.webp" width="240" height="360" alt="" loading="lazy" decoding="async">
           <div class="event-title">
             <p class="event-type">17. listopad</p>
             <h3>Občan Havel</h3>
@@ -115,6 +129,7 @@
             <span class="event-date" aria-hidden="true">19.11.</span>
             <span class="event-time" aria-hidden="true">Čt · 20:30</span>
           </time>
+          <img class="event-poster" src="assets/plakaty/laska.webp" width="240" height="360" alt="" loading="lazy" decoding="async">
           <div class="event-title">
             <p class="event-type">Filmový čtvrtek</p>
             <h3>Láska</h3>
@@ -129,6 +144,7 @@
             <span class="event-date" aria-hidden="true">21.11.</span>
             <span class="event-time" aria-hidden="true">So · 17:00</span>
           </time>
+          <img class="event-poster" src="assets/plakaty/zkompostuj.webp" width="240" height="360" alt="" loading="lazy" decoding="async">
           <div class="event-title">
             <p class="event-type">Jeden svět · Promítej i ty</p>
             <h3>Zkompostuj mě</h3>
@@ -144,6 +160,7 @@
             <span class="event-date" aria-hidden="true">26.11.</span>
             <span class="event-time" aria-hidden="true">Čt · 20:30</span>
           </time>
+          <img class="event-poster" src="assets/plakaty/obchod-na-korze.webp" width="240" height="360" alt="" loading="lazy" decoding="async">
           <div class="event-title">
             <p class="event-type">Filmový čtvrtek</p>
             <h3>Obchod na korze</h3>
@@ -158,6 +175,7 @@
             <span class="event-date" aria-hidden="true">29.11.</span>
             <span class="event-time" aria-hidden="true">Ne · 16:00</span>
           </time>
+          <img class="event-poster" src="assets/plakaty/zelezny-obr.webp" width="240" height="360" alt="" loading="lazy" decoding="async">
           <div class="event-title">
             <p class="event-type">Dětská neděle s popcornem</p>
             <h3>Železný obr</h3>
@@ -172,6 +190,7 @@
             <span class="event-date" aria-hidden="true">03.12.</span>
             <span class="event-time" aria-hidden="true">Čt · 20:30</span>
           </time>
+          <img class="event-poster" src="assets/plakaty/cizinec.webp" width="240" height="360" alt="" loading="lazy" decoding="async">
           <div class="event-title">
             <p class="event-type">Měsíc francouzského filmu</p>
             <h3>Cizinec</h3>
@@ -186,6 +205,7 @@
             <span class="event-date" aria-hidden="true">05.12.</span>
             <span class="event-time" aria-hidden="true">So · 20:00</span>
           </time>
+          <img class="event-poster" src="assets/plakaty/poslechovka.webp" width="240" height="360" alt="" loading="lazy" decoding="async">
           <div class="event-title">
             <p class="event-type">Poslechový večer</p>
             <h3>Poslechovka</h3>
@@ -197,9 +217,43 @@
         </li>
       </ul>
 
-      <section id="historie" class="history" aria-labelledby="past-title" hidden>
+      <section id="historie" class="history" aria-labelledby="past-title">
         <h2 id="past-title">Minulé akce</h2>
-        <ul class="event-list" id="past-schedule"></ul>
+        <ul class="event-list" id="past-schedule">
+          <li class="event">
+            <time datetime="2026-10-22T20:30:00+02:00" aria-label="22. října 2026 v 20:30">
+              <span class="event-date" aria-hidden="true">22.10.</span>
+              <span class="event-time" aria-hidden="true">Čt · 20:30</span>
+            </time>
+            <img class="event-poster" src="assets/plakaty/zurici-byk.webp" width="240" height="360" alt="" loading="lazy" decoding="async">
+            <div class="event-title">
+              <p class="event-type">Filmový čtvrtek</p>
+              <h3>Zuřící býk</h3>
+            </div>
+          </li>
+          <li class="event">
+            <time datetime="2026-10-15T20:30:00+02:00" aria-label="15. října 2026 v 20:30">
+              <span class="event-date" aria-hidden="true">15.10.</span>
+              <span class="event-time" aria-hidden="true">Čt · 20:30</span>
+            </time>
+            <img class="event-poster" src="assets/plakaty/pozvani.webp" width="240" height="360" alt="" loading="lazy" decoding="async">
+            <div class="event-title">
+              <p class="event-type">Filmový čtvrtek</p>
+              <h3>Pozvání</h3>
+            </div>
+          </li>
+          <li class="event">
+            <time datetime="2026-10-08T20:30:00+02:00" aria-label="8. října 2026 v 20:30">
+              <span class="event-date" aria-hidden="true">08.10.</span>
+              <span class="event-time" aria-hidden="true">Čt · 20:30</span>
+            </time>
+            <img class="event-poster" src="assets/plakaty/prisaham.webp" width="240" height="360" alt="" loading="lazy" decoding="async">
+            <div class="event-title">
+              <p class="event-type">Zahájení sezony</p>
+              <h3>Přísahám, že za to nemůžu</h3>
+            </div>
+          </li>
+        </ul>
       </section>
     </section>
 
