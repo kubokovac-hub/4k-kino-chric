@@ -101,7 +101,7 @@ nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
   width: max-content;
   max-width: 100%;
   margin-left: -.045em;
-  font: 800 clamp(5.5rem, 10.85vw, 10.5rem)/.79 var(--display);
+  font: 800 clamp(5.5rem, 10.85vw, 10.5rem)/.91 var(--display);
   text-transform: uppercase;
   letter-spacing: -.026em;
 }
